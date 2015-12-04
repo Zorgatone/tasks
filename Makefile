@@ -9,11 +9,11 @@ endif
 NAME=tasks
 BIN=bin
 SRC=src
-EXE=$(BIN)/tasks$(EXT)
+EXE:=$(BIN)/tasks$(EXT)
 
 CC=gcc
 
-OBJS=$(BIN)/tasks.o
+OBJS:=$(BIN)/tasks.o
 FLAGS=-std=c11
 
 all: $(EXE)
