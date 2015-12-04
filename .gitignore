@@ -8,10 +8,6 @@
 **/*~
 **/\#*\#
 
-# Bin folder
-bin/**
-!bin/.gitignore
-
 # Object files
 **/*.o
 **/*.ko
