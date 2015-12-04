@@ -1,0 +1,53 @@
+# Windows Crap
+**/Thumbs.db
+
+# OS X Crap
+**/.DS_Store
+
+# Emacs Crap
+**/*~
+**/\#*\#
+
+# Bin folder
+bin/**
+!bin/.gitignore
+
+# Object files
+**/*.o
+**/*.ko
+**/*.obj
+**/*.elf
+
+# Precompiled Headers
+**/*.gch
+**/*.pch
+
+# Libraries
+**/*.lib
+**/*.a
+**/*.la
+**/*.lo
+
+# Shared objects (inc. Windows DLLs)
+**/*.dll
+**/*.so
+**/*.so.*
+**/*.dylib
+
+# Executables
+**/*.exe
+**/*.bin
+**/*.out
+**/*.app
+**/*.i*86
+**/*.x86_64
+**/*.hex
+
+# Assembly, Java and Python bytecodes
+**/*.s
+**/*.jar
+**/*.pyc
+**/*.pyo
+
+# Debug files (OS X)
+**/*.dSYM/
