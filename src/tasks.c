@@ -11,7 +11,6 @@ menu_action menu(char *arg);
 void help(int argc, char **argv);
 
 int main(int argc, char **argv) {
-
 	puts("Welcome to the early version of this useless example :)");
 
 	if (argc < 2) {

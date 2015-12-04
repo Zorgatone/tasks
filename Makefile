@@ -6,6 +6,11 @@ else
 	RUN=./
 endif
 
+SYS := $(shell gcc -dumpmachine)
+ifneq (, $(findstring cygwin, $(SYS)))
+	RM=rm -rf
+endif
+
 NAME=tasks
 BIN=bin
 SRC=src
