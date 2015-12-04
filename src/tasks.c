@@ -8,7 +8,7 @@ typedef enum {
 } menu_action;
 
 menu_action menu(char *arg);
-void help(char *topic);
+void help(int argc, char **argv);
 
 int main(int argc, char **argv) {
 
@@ -24,7 +24,7 @@ int main(int argc, char **argv) {
 
 	switch(menu(argv[1])) {
 	case MENU_HELP:
-		help(NULL);
+		help(argc, argv);
 		break;
 	case MENU_UNKNOWN:
 	default:
@@ -44,6 +44,6 @@ menu_action menu(char *arg) {
 	return MENU_UNKNOWN;
 }
 
-void help(char *topic) {
+void help(int argc, char **argv) {
 	puts("No help yet!");
 }

@@ -14,7 +14,7 @@ EXE:=$(BIN)/tasks$(EXT)
 CC=gcc
 
 OBJS:=$(BIN)/tasks.o
-FLAGS=-std=c11
+FLAGS=-std=c11 -Wall -Wextra -pedantic
 
 all: $(EXE)
 $(EXE): $(OBJS)
