@@ -1,13 +1,14 @@
 ifeq "$(OS)" "Windows_NT"
 	EXT=.exe
 else
-	RM=rm -rf
+	EXT=
 endif
 
 NAME=tasks
 BIN=bin
 SRC=src
 EXE:=./$(BIN)/tasks$(EXT)
+RM=rm -rf
 
 CC=gcc
 
