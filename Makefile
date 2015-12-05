@@ -1,20 +1,20 @@
 NAME=tasks
 BIN=bin
 SRC=src
-EXE:=$(BIN)/tasks
+EXE:=$(BIN)/$(NAME)
 
 #RM=rm -rf
 #CC=gcc
 
-OBJS:=$(BIN)/tasks.o
+OBJS:=$(BIN)/$(NAME).o
 FLAGS=-std=c11 -Wall -Wextra -pedantic
 
 all: $(EXE)
 $(EXE): $(OBJS)
 	$(CC) $(FLAGS) $(OBJS) -o $(EXE)
 
-$(BIN)/tasks.o: $(SRC)/tasks.c
-	$(CC) $(FLAGS) -c $(SRC)/tasks.c -o $(BIN)/tasks.o
+$(BIN)/$(NAME).o: $(SRC)/$(NAME).c
+	$(CC) $(FLAGS) -c $(SRC)/$(NAME).c -o $(BIN)/$(NAME).o
 
 clean:
 	$(RM) $(EXE) $(OBJS)
