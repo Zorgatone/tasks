@@ -1,13 +1,13 @@
-NAME=tasks
-BIN=bin
-SRC=src
-EXE:=$(BIN)/$(NAME)
+NAME= tasks
+BIN= bin
+SRC= src
+EXE:= $(BIN)/$(NAME)
 
-#RM=rm -rf
-#CC=gcc
+#RM= rm -rf
+#CC= gcc
 
-OBJS:=$(BIN)/$(NAME).o
-FLAGS=-std=c11 -Wall -Wextra -pedantic
+OBJS:= $(BIN)/$(NAME).o
+FLAGS= -std=c11 -Wall -Wextra -pedantic
 
 all: $(EXE)
 $(EXE): $(OBJS)
@@ -16,8 +16,10 @@ $(EXE): $(OBJS)
 $(BIN)/$(NAME).o: $(SRC)/$(NAME).c
 	$(CC) $(FLAGS) -c $(SRC)/$(NAME).c -o $(BIN)/$(NAME).o
 
+.PHONY: clean
 clean:
 	$(RM) $(EXE) $(OBJS)
 
+.PHONY: run
 run: $(EXE)
 	$(EXE)
