@@ -1,16 +1,10 @@
-ifeq "$(OS)" "Windows_NT"
-	EXT=.exe
-else
-	EXT=
-endif
-
 NAME=tasks
 BIN=bin
 SRC=src
-EXE:=./$(BIN)/tasks$(EXT)
-RM=rm -rf
+EXE:=$(BIN)/tasks
 
-CC=gcc
+#RM=rm -rf
+#CC=gcc
 
 OBJS:=$(BIN)/tasks.o
 FLAGS=-std=c11 -Wall -Wextra -pedantic
@@ -23,7 +17,7 @@ $(BIN)/tasks.o: $(SRC)/tasks.c
 	$(CC) -c $(SRC)/tasks.c -o $(BIN)/tasks.o
 
 clean:
-	cd bin && $(RM) $(NAME)$(EXT) *.o
+	$(RM) $(EXE) $(OBJS)
 
 run: $(EXE)
 	$(EXE)
