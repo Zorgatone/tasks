@@ -13,8 +13,7 @@ WARNINGS= -Wall -Wextra -pedantic
 DEBUG= -O0 -DDEBUG -g3 -gdwarf-2
 FLAGS= -std=c11 $(WARNINGS) $(DEBUG)
 
-all:
-	echo $(OBJS);
+all: $(EXE)
 $(EXE): $(OBJS)
 	$(CC) $(FLAGS) $(OBJS) -o $(EXE)
 
