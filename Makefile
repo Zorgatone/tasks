@@ -6,13 +6,15 @@ EXE:= $(BIN)/$(NAME)
 #RM= rm -rf
 #CC= gcc
 
-OBJS:= $(BIN)/*.o
+OBJS:= $(patsubst %.c,%.o,$(wildcard $(SRC)/**/*.c))
+OBJS+= $(patsubst %.c,%.o,$(wildcard $(SRC)/*.c))
 
 WARNINGS= -Wall -Wextra -pedantic
 DEBUG= -O0 -DDEBUG -g3 -gdwarf-2
 FLAGS= -std=c11 $(WARNINGS) $(DEBUG)
 
-all: $(EXE)
+all:
+	echo $(OBJS);
 $(EXE): $(OBJS)
 	$(CC) $(FLAGS) $(OBJS) -o $(EXE)
 
