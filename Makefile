@@ -6,7 +6,7 @@ EXE:= $(BIN)/$(NAME)
 #RM= rm -rf
 #CC= gcc
 
-OBJS:= $(BIN)/main.o $(BIN)/util.o $(BIN)/menu.o
+OBJS:= $(BIN)/*.o
 
 WARNINGS= -Wall -Wextra -pedantic
 DEBUG= -O0 -DDEBUG -g3 -gdwarf-2
