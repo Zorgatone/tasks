@@ -6,8 +6,7 @@ EXE:= $(BIN)/$(NAME)
 #RM= rm -rf
 #CC= gcc
 
-OBJS:= $(patsubst %.c,%.o,$(wildcard $(SRC)/**/*.c))
-OBJS+= $(patsubst %.c,%.o,$(wildcard $(SRC)/*.c))
+OBJS:= $(patsubst $(SRC)/%.c,$(BIN)/%.o,$(wildcard $(SRC)/**/*.c $(SRC)/*.c))
 
 WARNINGS= -Wall -Wextra -pedantic
 DEBUG= -O0 -DDEBUG -g3 -gdwarf-2
@@ -18,11 +17,12 @@ $(EXE): $(OBJS)
 	$(CC) $(FLAGS) $(OBJS) -o $(EXE)
 
 $(BIN)/%.o: $(SRC)/%.c
-	$(CC) $(FLAGS) -c $(SRC)/%.c -o $(BIN)/%.o
+	mkdir -p $(@D)
+	$(CC) $(FLAGS) -c $^ -o $@
 
 .PHONY: clean
 clean:
-	$(RM) $(EXE) $(BIN)/*.o
+	$(RM) $(EXE) $(BIN)/**/*.o $(BIN)/*.o
 
 .PHONY: run
 run: $(EXE)
