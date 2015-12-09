@@ -20,6 +20,8 @@ $(BIN)/%.o: $(SRC)/%.c
 	mkdir -p $(@D)
 	$(CC) $(FLAGS) -c $^ -o $@
 
+rebuild: clean all
+
 .PHONY: clean
 clean:
 	$(RM) $(EXE) $(BIN)/**/*.o $(BIN)/*.o
